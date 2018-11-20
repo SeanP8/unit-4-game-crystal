@@ -19,7 +19,12 @@ var win = 0;
 var previous = 0;
 
 var startGame = function (){
-    
+    $("#lost").html("You Lost: " + lost);
+
+    $("#win").html("You Win: " + win);
+
+    $("#Total-Score").html("Total-Score: " + previous);
+
     $(".crystals").empty();
 
     var images = [
@@ -49,10 +54,10 @@ var startGame = function (){
         $(".crystals").append(crystal);
         
     }
-    $("#previous").html("Total Score: " + previous);
+    $("#Total-Score").html("Total-Score: " + previous);
 }
 
-startGame();
+
 
 
 // Event Delegation
@@ -62,7 +67,7 @@ $(document).on('click', ".crystal", function (){
 
     previous += num;
 
-    $("#previous").html("Total Score: " + previous);
+    $("#Total-Score").html("Total-Score: " + previous);
 
     console.log(previous);
 
@@ -91,3 +96,5 @@ $(document).on('click', ".crystal", function (){
 
     
 });
+
+startGame();
